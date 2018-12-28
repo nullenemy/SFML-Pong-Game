@@ -113,20 +113,24 @@ void PlayState::handleInput() {
             case sf::Event::Closed:
                 this->game->window.close();
                 break;
-            case sf::Event::KeyPressed:
-                if(event.key.code == sf::Keyboard::Escape)
-                    PauseGame();
-                if(event.key.code == sf::Keyboard::W)
-                    leftPaddleUp = true;
-                if(event.key.code == sf::Keyboard::S)
-                    leftPaddleDown = true;
-                if(event.key.code == sf::Keyboard::Up)
-                    rightPaddleUp = true;
-                if(event.key.code == sf::Keyboard::Down)
-                    rightPaddleDown = true;
-                break;
         }
     }
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::W)){
+        leftPaddleUp = true;
+    }
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::S)){
+        leftPaddleDown = true;
+    }
+
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
+        rightPaddleUp = true;
+    }
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down)){
+        rightPaddleDown = true;
+    }
+
+
+
 }
 
 
